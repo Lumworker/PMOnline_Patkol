@@ -1,0 +1,212 @@
+﻿.sectionBox {
+    margin: 10px 0 10px;
+}
+
+.progress {
+    height: 25px;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.progress-bar {
+    max-width: 100%;
+    height: 25px;
+    background: rgb(23,44,60);
+    -webkit-transition: width 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out;
+}
+
+    .progress-bar p {
+        margin: 0.25em 0 10px;
+        font-weight: bold;
+        cursor: default;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+    }
+
+.textblue {
+    color: #007bff;
+}
+
+.textgreen {
+    color: #28a745;
+}
+
+.textorange {
+    color: #fd7e14;
+}
+
+.textred {
+    color: #dc3545;
+}
+
+.green {
+    background-color: rgba(40, 167, 69,1);
+}
+
+.red {
+    background-color: rgba(220, 53, 69,1);
+}
+
+.orange {
+    background-color: rgba(253, 126, 20,1);
+}
+
+.gray {
+    background-color: rgba(204, 204, 204,1);
+}
+
+.blue {
+    background-color: rgba(0, 123, 255,1);
+}
+
+.yellow {
+    background-color: rgba(255, 193, 7,1);
+}
+
+.Shape {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    width: 65px;
+    height: 35px;
+    border: 0 solid rgba(0, 0, 0, 0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+    .Shape:hover {
+        color: #000;
+    }
+
+    .Shape p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+#legend {
+    text-align: center;
+}
+
+.form-control span {
+    padding: 0 5px 0 5px;
+}
+
+.morris-hover.morris-default-style {
+    cursor: default;
+    background: rgba(255,255,255,1);
+}
+
+.TextBoxCost {
+    text-align: center;
+    display: block;
+    height: 100%;
+    padding: 5px 5px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.LabelBoxCost {
+    text-align: center;
+    display: block;
+    height: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+}
+
+.TextBoxCost span {
+    padding: 0px 7px;
+}
+.text-header {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.text-subheader {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+    padding: 0px;
+    text-align: center;
+}
+
+.boxcolor {
+    margin-bottom: 5px;
+    padding-top: 3px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.boxcolor-big {
+    margin-bottom: 5px;
+    padding-top: 48px;
+    height: 130px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.boxcolor-big:hover, .boxcolor-big:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.text-mode {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.boxcolor:hover, .boxcolor:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.boxcolorgreen {
+    background-color: rgba(40, 167, 69,0.4);
+}
+
+.boxcolorred {
+    background-color: rgba(220, 53, 69,0.4);
+}
+
+.boxcoloryellow {
+    background-color: rgba(255, 193, 7,0.4);
+}
+
+.boxcolororange {
+    background-color: rgba(253, 126, 20,0.4);
+}

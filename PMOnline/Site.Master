@@ -1,0 +1,233 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PMOnline.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="Titlename">PM Online <%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="Content/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/sideNav.css" rel="stylesheet" />
+    <link href="Content/smart_wizard.min.css" rel="stylesheet" />
+    <link href="Content/smart_wizard_theme_arrows.min.css" rel="stylesheet" />
+    <link href="Content/smart_wizard_theme_circles.min.css" rel="stylesheet" />
+    <link href="Content/smart_wizard_theme_dots.min.css" rel="stylesheet" />
+    <link href="Content/Moritoring.css" rel="stylesheet" />
+    <link href="Content/morris.css" rel="stylesheet" />
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+
+
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <script src="Scripts/jquery-ui.js"></script>
+        <script src="Scripts/multiple-emails.js"></script>
+        <script src="Scripts/datatables.min.js"></script>
+        <script src="Scripts/dataTables.bootstrap.js"></script>
+        <script src="Scripts/dataTables.responsive.min.js"></script>
+        <script src="Scripts/Blob.min.js"></script>
+        <script src="Scripts/xlsx.core.min.js"></script>
+        <script src="Scripts/FileSaver.min.js"></script>
+        <script src="Scripts/tableexport.min.js"></script>
+        <script src="Scripts/jquery.smartWizard.min.js"></script>
+        <script src="Scripts/Blob.min.js"></script>
+        <script src="Scripts/qrcode.js"></script>
+        <script src="Scripts/sweetalert.min.js"></script>
+        <script src="Scripts/Currency.js"></script>
+        <script src="Scripts/jquery.flot.js"></script>
+        <script src="Scripts/jquery.flot.pie.js"></script>
+        <script src="Scripts/jquery.flot.resize.js"></script>
+        <script src="Scripts/raphael.min.js"></script>
+        <script src="Scripts/morris.js"></script>
+        <script src="Scripts/jquery.fixedheadertable.min.js"></script>
+
+
+        <style>
+            .ui-autocomplete {
+                z-index: 999999;
+                max-height: 200px;
+                overflow-y: auto; /* prevent horizontal scrollbar */
+                overflow-x: hidden; /* add padding to account for vertical scrollbar */
+                padding-right: 20px;
+            }
+
+            .radio-group label {
+                overflow: hidden;
+            }
+
+            .radio-group input {
+                height: 1px;
+                width: 1px;
+                position: absolute;
+                top: -20px;
+            }
+
+
+            .radio-group .not-active {
+                color: #3276b1;
+                background-color: #fff;
+            }
+
+            .dropdown-menu {
+                -webkit-transition: all .5s ease-out;
+                transition: all .5s ease-out;
+                transform: rotateX(90deg);
+                transform-origin: top;
+                opacity: 0;
+                display: block;
+                border: none;
+                margin-left: 5rem;
+            }
+
+            .open .dropdown-menu {
+                opacity: 1;
+                transform: rotateX(0deg);
+                transform-origin: top;
+                border: none;
+                /*position: relative;*/
+                background-color: #bfbfbf;
+            }
+        </style>
+        <div class="navbar navbar-inverse navbar-fixed-top" id="navBar" style="display: none;">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand" style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+                    <a href="javascript:void(0)" class="navbar-brand" style="font-size: 20px; margin-top: 0.2em; cursor: default">PM Online</a>
+                </div>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="javascript:void(0)" id="PMMoniter">Monitoring</a>
+                    <a href="javascript:void(0)" id="PMReportingCheckllist">Checklist</a>
+                    <%--<a href="javascript:void(0)" id="PMCheckllist">Checklist Form</a>--%>
+                    <a href="javascript:void(0)" id="LogOut">Logout</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - PM Online</p>
+            </footer>
+        </div>
+
+        <div class="modal fade" id="IMGUpload" style="display: none; position: fixed; z-index: 9999; overflow: auto; top: 40%; text-align: center;" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <img src="images/PATKOL2.gif" class="modal-content imgPreviewG" style="width: 10em; height: 10em;">
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+
+                if (!sessionStorage.getItem('username')) {
+                    var Text = getAllUrlParams("Text");
+                    if (Text == "true") {
+
+                    } else {
+                        storage.removeItem("username");
+                        window.location.href = "Login.aspx";
+                    }
+                }
+
+                $("#PMReportingCheckllist").on('click', function () {
+                    window.location.href = "PMReportingCheckllist.aspx?Username="+sessionStorage.getItem('username');
+                });
+                $("#PMMoniter").on('click', function () {
+                    window.location.href = "PMMoniter.aspx?Username="+sessionStorage.getItem('username');
+                });
+                $("#LogOut").on('click', function () {
+                    if (sessionStorage.getItem('username')) {
+                        sessionStorage.removeItem("username");
+                    }
+                    window.location.href = "Login.aspx";
+                });
+
+
+            });
+
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "300px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+
+            function CallAjaxReturnData(method, Setdata) {
+                var data = "";
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    global: false,
+                    url: method,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(Setdata),
+                    success: function (response) {
+                        data = response.d;
+                    }
+                });
+                return data;
+            }
+
+
+            function getAllUrlParams(sParam) {
+
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1];
+                    } else {
+
+                    }
+                }
+            }
+
+        </script>
+    </form>
+</body>
+</html>
